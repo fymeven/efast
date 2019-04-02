@@ -1,0 +1,37 @@
+###################### server ######################
+server:
+  servlet:
+    context-path: /message
+  port: 8012
+###################### spring ######################
+spring:
+  application:
+  name: message
+  ###################### redis ######################
+  redis:
+    host: 47.107.151.224
+    port: 6379
+    password: even@redis_224
+  ###################### kafka ######################
+  kafka:
+      consumer:
+        group-id: efast-message
+      bootstrap-servers:
+  ###################### devtools ######################
+  devtools:
+    restart:
+      enabled: true
+      exclude: target/**
+  ###################### jackson ######################
+  jackson:
+    time-zone: GMT+8
+    serialization:
+      write-dates-as-timestamps: true
+  servlet:
+    multipart:
+      max-file-size: 200MB
+swagger:
+  enabled: true
+
+
+

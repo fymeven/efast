@@ -1,0 +1,54 @@
+###################### server ######################
+server:
+  servlet:
+    context-path: /efast
+  port: 8088
+###################### spring ######################
+spring:
+  application:
+  name: efast-web
+  ###################### datasource ######################
+  datasource:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:mysql://47.107.151.224:3306/even
+      username: even
+      password: even@mysql_224
+      driver-class-name: com.mysql.jdbc.Driver
+  ###################### redis ######################
+  redis:
+    host: 47.107.151.224
+    port: 6379
+    password: even@redis_224
+  ###################### elasticsearch ######################
+  data:
+    elasticsearch:
+      cluster-name: even_es_cluster
+      cluster-nodes: 47.107.151.224:9300
+  ###################### devtools ######################
+  devtools:
+    restart:
+      enabled: true
+      exclude: target/**
+  ###################### jackson ######################
+  jackson:
+    time-zone: GMT+8
+    serialization:
+      write-dates-as-timestamps: true
+  servlet:
+    multipart:
+      max-file-size: 200MB
+###################### pageHelper ######################
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: countSql
+###################### mybatis ######################
+mybatis:
+  mapper-locations: classpath*:/cn/_51even/efast/dal/mapping/*.xml
+  type-handlers-package: cn._51even.efast.dal.typehandler
+###################### log ######################
+swagger:
+  enabled: true
+
+

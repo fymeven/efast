@@ -1,0 +1,46 @@
+###################### server ######################
+server:
+  servlet:
+    context-path: /efast-web
+    session:
+      cookie:
+        name: casid
+  port: 8088
+###################### eureka ######################
+eureka:
+    instance:
+      ip-address: 127.0.0.1
+      prefer-ip-address: true
+    client:
+      service-url:
+        defaultZone: http://127.0.0.1:8761/eureka,http://127.0.0.1:8762/eureka,http://127.0.0.1:8763/eureka
+###################### spring ######################
+spring:
+  application:
+    name: efast-web
+  ###################### datasource ######################
+  datasource:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:mysql://47.107.151.224:3306/even
+      username: even
+      password: even@mysql_224
+      driver-class-name: com.mysql.jdbc.Driver
+  ###################### redis ######################
+  redis:
+    host: 47.107.151.224
+    port: 6379
+    password: even@redis_224
+###################### swagger ######################
+swagger:
+  enabled: true
+###################### security ######################
+security:
+  oauth2:
+    client:
+      client-id: client1
+      client-secret: secret1
+      access-token-uri: http://127.0.0.1:8801/security-cas-server/oauth/token
+      user-authorization-uri: http://127.0.0.1:8801/security-cas-server/oauth/authorize
+    resource:
+      user-info-uri: http://127.0.0.1:8801/security-cas-server/oauth/user
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn._51even.efast.dal.mapper.SysClientEntityMapper">
+  <resultMap id="BaseResultMap" type="cn._51even.efast.bean.entity.SysClientEntity">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="client_id" jdbcType="VARCHAR" property="clientId" />
+    <result column="client_secret" jdbcType="VARCHAR" property="clientSecret" />
+    <result column="grant_type" jdbcType="VARCHAR" property="grantType" />
+    <result column="auto_approve" jdbcType="INTEGER" property="autoApprove" />
+    <result column="client_index_url" jdbcType="VARCHAR" property="clientIndexUrl" />
+    <result column="client_redirect_url" jdbcType="VARCHAR" property="clientRedirectUrl" />
+    <result column="scopes" jdbcType="VARCHAR" property="scopes" />
+    <result column="client_icon" jdbcType="VARCHAR" property="clientIcon" />
+    <result column="weight" jdbcType="INTEGER" property="weight" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+</mapper>
