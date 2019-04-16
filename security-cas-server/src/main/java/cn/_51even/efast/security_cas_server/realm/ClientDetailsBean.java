@@ -4,10 +4,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.provider.ClientDetails;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 @Component
 public class ClientDetailsBean implements ClientDetails {
@@ -24,15 +21,17 @@ public class ClientDetailsBean implements ClientDetails {
 
     private Set<String> scope;
 
-    private Set<String> authorizedGrantTypes;
+    private Set<String> authorizedGrantTypes = new TreeSet<>();
 
-    private Set<String> registeredRedirectUri;
+    private Set<String> registeredRedirectUri = new TreeSet<>();
 
-    private Integer accessTokenValiditySeconds;
+    private Integer accessTokenValiditySeconds = 3600;
 
-    private Integer refreshTokenValiditySeconds;
+    private Integer refreshTokenValiditySeconds = 86400;
 
-    private Map<String, Object> additionalInformation;
+    private Map<String, Object> additionalInformation = new HashMap<>();
+
+    private Collection<GrantedAuthority> authorities = new TreeSet<>();
 
     @Override
     public String getClientId() {
@@ -135,11 +134,15 @@ public class ClientDetailsBean implements ClientDetails {
 
     @Override
     public Collection<GrantedAuthority> getAuthorities() {
-        return new ArrayList<>();
+        return authorities;
+    }
+
+    public void setAuthorities(Collection<GrantedAuthority> authorities) {
+        this.authorities = authorities;
     }
 
     @Override
-    public boolean isAutoApprove(String s) {
-        return false;
+    public boolean isAutoApprove(String scope) {
+        return true;
     }
 }

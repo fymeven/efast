@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.4.RELEASE</version>
+        <version>2.1.4.RELEASE</version>
     </parent>
 
     <groupId>cn._51even.efast</groupId>
@@ -30,10 +30,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <!--lombok-->
+        <lombok.version>1.16.8</lombok.version>
+        <!--log4j-->
+        <log4j.version>1.2.16</log4j.version>
         <!--springCloud版本-->
         <spring-cloud.version>Finchley.SR2</spring-cloud.version>
-        <!--security标签-->
-        <security-thymeleaf.version>3.0.2.RELEASE</security-thymeleaf.version>
+        <!--spring security-->
+        <spring-security-oauth2.version>2.3.5.RELEASE</spring-security-oauth2.version>
         <!--PostGreSQL驱动-->
         <postgresql.version>42.2.4</postgresql.version>
         <!--mysql驱动-->
@@ -73,11 +77,23 @@
         <commons-codec.version>1.9</commons-codec.version>
         <commons-beanutils.version>1.9.3</commons-beanutils.version>
         <commons-fileupload.version>1.2.2</commons-fileupload.version>
+        <httpclient.httpmime.version>4.5.6</httpclient.httpmime.version>
     </properties>
 
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
             <!--springCloud依赖-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -86,11 +102,12 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!--<dependency>-->
-                <!--<groupId>org.thymeleaf.extras</groupId>-->
-                <!--<artifactId>thymeleaf-extras-springsecurity4</artifactId>-->
-                <!--<version>${security-thymeleaf.version}</version>-->
-            <!--</dependency>-->
+            <!--spring-security-oauth2-->
+            <dependency>
+                <groupId>org.springframework.security.oauth</groupId>
+                <artifactId>spring-security-oauth2</artifactId>
+                <version>${spring-security-oauth2.version}</version>
+            </dependency>
             <!-- mysql -->
             <dependency>
                 <groupId>mysql</groupId>
@@ -228,7 +245,6 @@
                 <artifactId>axis2-transport-local</artifactId>
                 <version>${webservice.axis2.version}</version>
             </dependency>
-
              <!--axis1-->
             <dependency>
                 <groupId>org.apache.axis</groupId>
@@ -245,7 +261,6 @@
                 <artifactId>wsdl4j</artifactId>
                 <version>${webservice.axis1.version}</version>
             </dependency>
-
             <!-- poi工具包 -->
             <dependency>
                 <groupId>org.apache.poi</groupId>
@@ -261,6 +276,11 @@
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi-ooxml-schemas</artifactId>
                 <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${commons-collections4.version}</version>
             </dependency>
             <!-- json工具包 -->
             <dependency>
@@ -280,11 +300,6 @@
                 <version>${commons-io.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-collections4</artifactId>
-                <version>${commons-collections4.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
                 <version>${commons-codec.version}</version>
@@ -302,9 +317,8 @@
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpmime</artifactId>
-                <version>4.5.6</version>
+                <version>${httpclient.httpmime.version}</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
 

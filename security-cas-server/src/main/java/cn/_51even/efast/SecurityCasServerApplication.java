@@ -9,4 +9,5 @@ public class SecurityCasServerApplication {
     public static void main(String[] args) {
         SpringApplication.run(SecurityCasServerApplication.class,args);
     }
+
 }

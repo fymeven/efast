@@ -28,6 +28,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * Created by Administrator on 2018/5/18.
@@ -58,6 +59,9 @@ public class HttpUtils {
     }
 
     public static <T>T doPost(String url,JSONObject param,JSONObject header,JSONObject file,String contentType,Class<T> beanClass){
+        if (StringUtils.isBlank(contentType)){
+            contentType=ContentType.X_WWW_FORM_URLENCODED;
+        }
         CloseableHttpClient httpClient = null;
         HttpPost httpPost = null;
         CloseableHttpResponse response = null;
@@ -136,6 +140,10 @@ public class HttpUtils {
             }
         }
         return null;
+    }
+
+    public static <T>T doGet(String url,JSONObject param,Class<T> beanClass){
+        return doGet(url,param,null,beanClass);
     }
 
     public static <T>T doGet(String url,JSONObject param,JSONObject header,Class<T> beanClass){

@@ -17,7 +17,7 @@ import javax.annotation.Resource;
 import javax.validation.constraints.NotNull;
 import java.util.Set;
 
-@Api(description = "系统角色接口",tags = "sysRole")
+@Api(value = "系统角色接口",tags = "sysRole")
 @RestController
 @RequestMapping("/sysRole")
 @Validated
@@ -34,7 +34,7 @@ public class SysRoleController {
     @GetMapping("/getRolesByUserId")
     public ResponseResult getRolesByUserId(@NotNull(message = "用户id不能为空")
                                                 @RequestParam(required = false) Integer userId){
-        Set<SysRoleEntity> sysRoleInfo = sysRoleService.getRolesByUserId(userId);
+        Set<String> sysRoleInfo = sysRoleService.getRolesByUserId(userId);
         return ResponseResult.successData(sysRoleInfo);
     }
 

@@ -33,5 +33,8 @@ spring:
 ###################### swagger ######################
 swagger:
   enabled: true
-
-
+###################### log ######################
+logging:
+  level:
+    org.springframework.security: debug
+    cn._51even.efast.security_cas_server: debug

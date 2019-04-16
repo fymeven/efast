@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
 
-@Api(description = "oauth接口",tags = "oauth")
+@Api(value = "oauth接口",tags = "oauth")
 @RestController
 @RequestMapping("/oauth")
 @Validated

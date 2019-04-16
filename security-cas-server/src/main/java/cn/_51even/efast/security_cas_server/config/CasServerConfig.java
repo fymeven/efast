@@ -9,19 +9,9 @@ import org.springframework.stereotype.Component;
 @PropertySource(value = "classpath:config/casServer.properties")
 public class CasServerConfig {
 
-    private String jwtSigningKey;
-
     private Integer accessTokenValiditySeconds;
 
     private Integer refreshTokenValiditySeconds;
-
-    public String getJwtSigningKey() {
-        return jwtSigningKey;
-    }
-
-    public void setJwtSigningKey(String jwtSigningKey) {
-        this.jwtSigningKey = jwtSigningKey;
-    }
 
     public Integer getAccessTokenValiditySeconds() {
         return accessTokenValiditySeconds;

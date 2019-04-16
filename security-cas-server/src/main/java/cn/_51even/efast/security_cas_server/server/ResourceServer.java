@@ -12,10 +12,8 @@ import org.springframework.web.cors.CorsUtils;
 /**
  * 资源服务器
  */
-@Order(6)
 @Configuration
 @EnableResourceServer
-@EnableGlobalMethodSecurity(prePostEnabled = true)//EnableGlobalMethodSecurity开户方法级别的保护
 public class ResourceServer extends ResourceServerConfigurerAdapter {
 
     @Override
@@ -24,18 +22,8 @@ public class ResourceServer extends ResourceServerConfigurerAdapter {
         http.csrf().disable();
         http.authorizeRequests()
                 // 跨域预检请求
-                .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                .requestMatchers(CorsUtils::isPreFlightRequest).permitAll()
-                //静态文件
-                .antMatchers("/static/**","/templates/**","/favicon.ico").permitAll()
-                // swagger
-                .antMatchers("/swagger-ui.html").permitAll()
-                .antMatchers("/swagger-resources").permitAll()
-                .antMatchers("/v2/api-docs").permitAll()
-                .antMatchers("/webjars/springfox-swagger-ui/**").permitAll()
-                //需要认证后才能访问用户信息
-                .antMatchers("/oauth/user").authenticated()
-                .antMatchers("/**").authenticated()
+                .antMatchers(HttpMethod.OPTIONS).permitAll()
+                .anyRequest().authenticated()
         ;
     }
 }

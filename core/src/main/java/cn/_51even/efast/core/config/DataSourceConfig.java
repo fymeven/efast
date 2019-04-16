@@ -32,7 +32,13 @@ public class DataSourceConfig {
     @Bean(name = "dataSource")
     @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource dataSource(){
-        return new DruidDataSource();
+        DruidDataSource druidDataSource = new DruidDataSource();
+        try{
+            druidDataSource.addFilters("stat,wall,log4j");
+        }catch (Exception e){
+
+        }
+        return druidDataSource;
     }
 
     @Bean(name = "dynamicDataSource")

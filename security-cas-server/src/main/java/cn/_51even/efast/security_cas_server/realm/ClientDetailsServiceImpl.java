@@ -12,7 +12,6 @@ import org.springframework.security.oauth2.provider.ClientRegistrationException;
 import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Set;
 
 public class ClientDetailsServiceImpl implements ClientDetailsService {
 
@@ -43,13 +42,9 @@ public class ClientDetailsServiceImpl implements ClientDetailsService {
         }
         clientDetailsBean.setAccessTokenValiditySeconds(casServerConfig.getAccessTokenValiditySeconds());
         clientDetailsBean.setRefreshTokenValiditySeconds(casServerConfig.getRefreshTokenValiditySeconds());
-        if (clientDetailsBean.getAuthorizedGrantTypes() == null){
-            Set grantType= new HashSet<>();
-            GrantTypeEnum.grantType[] values = GrantTypeEnum.grantType.values();
-            for (GrantTypeEnum.grantType value : values) {
-                grantType.add(value.getCode());
-            }
-            clientDetailsBean.setAuthorizedGrantTypes(grantType);
+        GrantTypeEnum.grantType[] values = GrantTypeEnum.grantType.values();
+        for (GrantTypeEnum.grantType value : values) {
+            clientDetailsBean.getAuthorizedGrantTypes().add(value.getCode());
         }
         return clientDetailsBean;
     }

@@ -2,9 +2,6 @@
 server:
   servlet:
     context-path: /efast-web
-    session:
-      cookie:
-        name: casid
   port: 8088
 ###################### eureka ######################
 eureka:
@@ -30,17 +27,29 @@ spring:
     host: 47.107.151.224
     port: 6379
     password: even@redis_224
+  ###################### thymeleaf ######################
+  thymeleaf:
+    cache: false
+    encoding: UTF-8
+  ###################### security ######################
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            provider: github
+            clientId: 1aa86dcdb5a67d97770d
+            clientSecret: e3410e9972b641e505e20368f95ad9d215444916
+          efast:
+            clientId: client1
+            clientSecret: e10adc3949ba59abbe56e057f20f883e
+            authorizationGrantType: authorization_code
+            redirectUri: http://127.0.0.1:8088/efast-web/login/oauth/code/efast
+        provider:
+          efast:
+            tokenUri: http://127.0.0.1:8801/security-cas-server/oauth/token
+            authorizationUri: http://127.0.0.1:8801/security-cas-server/oauth/authorize
+            userInfoUri: http://127.0.0.1:8801/security-cas-server/oauth/user
 ###################### swagger ######################
 swagger:
   enabled: true
-###################### security ######################
-security:
-  oauth2:
-    client:
-      client-id: client1
-      client-secret: secret1
-      access-token-uri: http://127.0.0.1:8801/security-cas-server/oauth/token
-      user-authorization-uri: http://127.0.0.1:8801/security-cas-server/oauth/authorize
-    resource:
-      user-info-uri: http://127.0.0.1:8801/security-cas-server/oauth/user
-

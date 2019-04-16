@@ -5,5 +5,5 @@ import cn._51even.efast.security_cas_server.bean.entity.SysRoleEntity;
 import java.util.Set;
 
 public interface SysRoleService{
-    Set<SysRoleEntity> getRolesByUserId(Integer userId);
+    Set<String> getRolesByUserId(Integer userId);
 }

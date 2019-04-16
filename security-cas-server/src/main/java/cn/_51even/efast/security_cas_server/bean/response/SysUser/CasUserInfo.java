@@ -4,11 +4,12 @@ import cn._51even.efast.security_cas_server.bean.entity.SysDeptEntity;
 import cn._51even.efast.security_cas_server.bean.entity.SysResourceEntity;
 import cn._51even.efast.security_cas_server.bean.entity.SysRoleEntity;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-public class CasUserInfo {
+public class CasUserInfo implements Serializable {
 
     private Integer id;
 

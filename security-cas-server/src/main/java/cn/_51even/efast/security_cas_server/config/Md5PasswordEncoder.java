@@ -1,8 +1,11 @@
 package cn._51even.efast.security_cas_server.config;
 
 import org.apache.commons.codec.digest.DigestUtils;
+import org.springframework.context.annotation.Primary;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Component;
 
+@Component("passwordEncoder")
 public class Md5PasswordEncoder implements PasswordEncoder {
     @Override
     public String encode(CharSequence charSequence) {

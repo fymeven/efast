@@ -6,6 +6,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
+import java.util.HashSet;
 
 @Component
 public class UserDetailsBean implements UserDetails {
@@ -36,9 +37,7 @@ public class UserDetailsBean implements UserDetails {
     /**
      * 权限列表
      */
-    private Collection<GrantedAuthority>  authorities;
-
-    private CasUserInfo casUserInfo;
+    private Collection<GrantedAuthority> authorities = new HashSet<>();
 
     @Override
     public String getUsername() {
@@ -101,13 +100,5 @@ public class UserDetailsBean implements UserDetails {
 
     public void setAuthorities(Collection<GrantedAuthority> authorities) {
         this.authorities = authorities;
-    }
-
-    public CasUserInfo getCasUserInfo() {
-        return casUserInfo;
-    }
-
-    public void setCasUserInfo(CasUserInfo casUserInfo) {
-        this.casUserInfo = casUserInfo;
     }
 }
