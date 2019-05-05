@@ -1,4 +1,4 @@
-package cn._51even.efast.register_server;
+package cn._51even.efast.register_client;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.eureka.EurekaClientConfigBean;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/eureka")
-public class RegisterServerController {
+public class RegisterClientController {
 
     @Autowired
     EurekaClientConfigBean eurekaClientConfigBean;

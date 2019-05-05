@@ -3,14 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/cloud-config-server/cloud-config-server.iml" filepath="$PROJECT_DIR$/cloud-config-server/cloud-config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-eureka-client/cloud-eureka-client.iml" filepath="$PROJECT_DIR$/cloud-eureka-client/cloud-eureka-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-gateway-proxy/cloud-gateway-proxy.iml" filepath="$PROJECT_DIR$/cloud-gateway-proxy/cloud-gateway-proxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-register-server/cloud-register-server.iml" filepath="$PROJECT_DIR$/cloud-register-server/cloud-register-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/efast.iml" filepath="$PROJECT_DIR$/efast.iml" />
-      <module fileurl="file://$PROJECT_DIR$/eureka-register-cluster/eureka-register-cluster.iml" filepath="$PROJECT_DIR$/eureka-register-cluster/eureka-register-cluster.iml" />
-      <module fileurl="file://$PROJECT_DIR$/eureka-register-cluster/eureka-register-server-1/eureka-register-server-1.iml" filepath="$PROJECT_DIR$/eureka-register-cluster/eureka-register-server-1/eureka-register-server-1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/eureka-register-cluster/eureka-register-server-2/eureka-register-server-2.iml" filepath="$PROJECT_DIR$/eureka-register-cluster/eureka-register-server-2/eureka-register-server-2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/eureka-register-cluster/eureka-register-server-3/eureka-register-server-3.iml" filepath="$PROJECT_DIR$/eureka-register-cluster/eureka-register-server-3/eureka-register-server-3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gateway-proxy/gateway-proxy.iml" filepath="$PROJECT_DIR$/gateway-proxy/gateway-proxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/message/message.iml" filepath="$PROJECT_DIR$/message/message.iml" />
       <module fileurl="file://$PROJECT_DIR$/security-cas-client/security-cas-client.iml" filepath="$PROJECT_DIR$/security-cas-client/security-cas-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/security-cas-server/security-cas-server.iml" filepath="$PROJECT_DIR$/security-cas-server/security-cas-server.iml" />

@@ -1,8 +1,8 @@
 server:
-  port: 8302
+  port: 8401
 spring:
   application:
-    name: cloud-register-server
+    name: cloud-register-client
   cloud:
     config:
       uri: http://localhost:8301

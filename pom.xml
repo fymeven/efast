@@ -15,8 +15,8 @@
     <modules>
         <module>cloud-config-server</module>
         <module>cloud-register-server</module>
-        <module>eureka-register-cluster</module>
-        <module>gateway-proxy</module>
+        <module>cloud-gateway-proxy</module>
+        <module>cloud-eureka-client</module>
         <module>core</module>
         <module>security-cas-server</module>
         <module>security-cas-client</module>

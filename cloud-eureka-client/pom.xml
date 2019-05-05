@@ -3,25 +3,31 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>efast</artifactId>
+        <artifactId>eureka-register-cluster</artifactId>
         <groupId>cn._51even.efast</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-config-server</artifactId>
-    <name>cloud-config-server</name>
-    <description>config配置中心</description>
+    <artifactId>cloud-eureka-client</artifactId>
+    <name>cloud-eureka-client</name>
+    <description>eureka客户端</description>
 
     <dependencies>
+        <!--配置中心客户端-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+        <!--eureka注册中心客户端-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
     </dependencies>
 
     <build>
-        <finalName>cloud-config-server</finalName>
+        <finalName>cloud-register-server</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

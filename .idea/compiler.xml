@@ -10,17 +10,17 @@
         <module name="security-cas-server" />
         <module name="security-cas-client" />
         <module name="cloud-register-server" />
-        <module name="gateway-proxy" />
+        <module name="cloud-eureka-client" />
         <module name="message" />
-        <module name="eureka-register-server-3" />
-        <module name="eureka-register-server-2" />
-        <module name="eureka-register-server-1" />
         <module name="cloud-config-server" />
+        <module name="cloud-gateway-proxy" />
         <module name="core" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="cloud-config-server" target="1.8" />
+      <module name="cloud-eureka-client" target="1.8" />
+      <module name="cloud-gateway-proxy" target="1.8" />
       <module name="cloud-register-server" target="1.8" />
       <module name="core" target="1.8" />
       <module name="efast" target="1.8" />
@@ -28,7 +28,6 @@
       <module name="eureka-register-server-1" target="1.8" />
       <module name="eureka-register-server-2" target="1.8" />
       <module name="eureka-register-server-3" target="1.8" />
-      <module name="gateway-proxy" target="1.8" />
       <module name="message" target="1.8" />
       <module name="security-cas-client" target="1.8" />
       <module name="security-cas-server" target="1.8" />
@@ -38,12 +37,13 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="cloud-config-server" options="-parameters" />
+      <module name="cloud-eureka-client" options="-parameters" />
+      <module name="cloud-gateway-proxy" options="-parameters" />
       <module name="cloud-register-server" options="-parameters" />
       <module name="core" options="-parameters" />
       <module name="eureka-register-server-1" options="-parameters" />
       <module name="eureka-register-server-2" options="-parameters" />
       <module name="eureka-register-server-3" options="-parameters" />
-      <module name="gateway-proxy" options="-parameters" />
       <module name="message" options="-parameters" />
       <module name="security-cas-client" options="-parameters" />
       <module name="security-cas-server" options="-parameters" />

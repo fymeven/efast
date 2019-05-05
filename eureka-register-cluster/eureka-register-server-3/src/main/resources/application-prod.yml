@@ -1,9 +1,0 @@
-server:
-  port: 8763
-spring:
-  application:
-    name: eureka-register-server-3
-eureka:
-  client:
-    service-url:
-      defaultZone: http://47.107.151.224:8761/eureka,http://47.107.151.224:8762/eureka
