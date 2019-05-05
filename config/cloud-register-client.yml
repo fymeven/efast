@@ -1,0 +1,9 @@
+server:
+  port: 8401
+spring:
+  application:
+    name: cloud-register-client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8501/eureka

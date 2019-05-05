@@ -1,5 +1,3 @@
-server:
-  port: 8302
 spring:
   application:
     name: cloud-register-server

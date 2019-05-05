@@ -7,7 +7,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/fymeven/efast
+          uri: https://github.com/fymeven/efast.git
           username: fymeven
           password: evenspike233
           search-paths: config
