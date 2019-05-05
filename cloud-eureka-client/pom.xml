@@ -27,7 +27,7 @@
     </dependencies>
 
     <build>
-        <finalName>cloud-register-server</finalName>
+        <finalName>cloud-register-client</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
