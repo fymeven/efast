@@ -1,0 +1,17 @@
+server:
+  port: 8502
+spring:
+  application:
+    name: cloud-register-server
+eureka:
+  instance:
+    hostname: localhost
+    preferIpAddress: true
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://127.0.0.1:8502/eureka
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+    enableSelfPreservation: false
