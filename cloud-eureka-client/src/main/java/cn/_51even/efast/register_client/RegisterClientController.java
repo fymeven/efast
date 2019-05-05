@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/eureka")
+@RequestMapping("/eureka-register")
 public class RegisterClientController {
 
     @Autowired
     EurekaClientConfigBean eurekaClientConfigBean;
 
-    @GetMapping("/server-list")
+    @GetMapping("/service-info")
     public Object getEurekaServerUrl(){
         return eurekaClientConfigBean.getServiceUrl();
     }
