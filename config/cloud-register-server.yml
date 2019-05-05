@@ -15,3 +15,8 @@ eureka:
   server:
     waitTimeInMsWhenSyncEmpty: 0
     enableSelfPreservation: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
