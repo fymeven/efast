@@ -9,15 +9,19 @@
         <module name="web" />
         <module name="security-cas-server" />
         <module name="security-cas-client" />
+        <module name="cloud-register-server" />
         <module name="gateway-proxy" />
         <module name="message" />
         <module name="eureka-register-server-3" />
         <module name="eureka-register-server-2" />
         <module name="eureka-register-server-1" />
+        <module name="cloud-config-server" />
         <module name="core" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cloud-config-server" target="1.8" />
+      <module name="cloud-register-server" target="1.8" />
       <module name="core" target="1.8" />
       <module name="efast" target="1.8" />
       <module name="eureka-register-cluster" target="1.8" />
@@ -33,6 +37,8 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cloud-config-server" options="-parameters" />
+      <module name="cloud-register-server" options="-parameters" />
       <module name="core" options="-parameters" />
       <module name="eureka-register-server-1" options="-parameters" />
       <module name="eureka-register-server-2" options="-parameters" />

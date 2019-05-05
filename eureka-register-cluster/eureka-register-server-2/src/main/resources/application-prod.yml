@@ -1,0 +1,9 @@
+server:
+  port: 8762
+spring:
+  application:
+    name: eureka-register-server-2
+eureka:
+  client:
+    service-url:
+      defaultZone: http://47.107.151.224:8761/eureka,http://47.107.151.224:8763/eureka

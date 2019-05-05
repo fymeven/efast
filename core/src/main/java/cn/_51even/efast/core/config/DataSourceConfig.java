@@ -21,14 +21,6 @@ public class DataSourceConfig {
 
     private static HashMap<Object,Object> dataSourceMap = new HashMap<>();
 
-    public static HashMap<Object, Object> getDataSourceMap() {
-        return dataSourceMap;
-    }
-
-    public static void setDataSourceMap(HashMap<Object, Object> dataSourceMap) {
-        DataSourceConfig.dataSourceMap = dataSourceMap;
-    }
-
     @Bean(name = "dataSource")
     @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource dataSource(){

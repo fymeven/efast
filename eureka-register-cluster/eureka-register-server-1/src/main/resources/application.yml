@@ -1,9 +1,3 @@
-server:
-  port: 8761
 spring:
-  application:
-    name: eureka-register-server-1
-eureka:
-  client:
-    service-url:
-      defaultZone: http://127.0.0.1:8762/eureka,http://127.0.0.1:8763/eureka
+  profiles:
+    active: local

@@ -16,6 +16,7 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+@Service("userDetailService")
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Resource

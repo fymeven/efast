@@ -12,6 +12,7 @@ import org.springframework.web.cors.CorsUtils;
 /**
  * 资源服务器
  */
+@Order(3)
 @Configuration
 @EnableResourceServer
 public class ResourceServer extends ResourceServerConfigurerAdapter {

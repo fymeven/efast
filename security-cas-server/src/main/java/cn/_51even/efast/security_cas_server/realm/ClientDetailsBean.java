@@ -1,5 +1,6 @@
 package cn._51even.efast.security_cas_server.realm;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.provider.ClientDetails;
 import org.springframework.stereotype.Component;
@@ -13,7 +14,7 @@ public class ClientDetailsBean implements ClientDetails {
 
     private Set<String> resourceIds;
 
-    private boolean secretRequired=true;
+    private boolean secretRequired;
 
     private String clientSecret;
 
@@ -21,17 +22,19 @@ public class ClientDetailsBean implements ClientDetails {
 
     private Set<String> scope;
 
-    private Set<String> authorizedGrantTypes = new TreeSet<>();
+    private Set<String> authorizedGrantTypes;
 
-    private Set<String> registeredRedirectUri = new TreeSet<>();
+    private Set<String> registeredRedirectUri;
 
-    private Integer accessTokenValiditySeconds = 3600;
+    private Integer accessTokenValiditySeconds;
 
-    private Integer refreshTokenValiditySeconds = 86400;
+    private Integer refreshTokenValiditySeconds;
 
-    private Map<String, Object> additionalInformation = new HashMap<>();
+    private Map<String, Object> additionalInformation;
 
-    private Collection<GrantedAuthority> authorities = new TreeSet<>();
+    private Collection<GrantedAuthority> authorities;
+
+    private Set<String> autoApproveScopes;
 
     @Override
     public String getClientId() {
@@ -53,7 +56,7 @@ public class ClientDetailsBean implements ClientDetails {
 
     @Override
     public boolean isSecretRequired() {
-        return secretRequired;
+        return StringUtils.isNotBlank(this.clientSecret);
     }
 
     public void setSecretRequired(boolean secretRequired) {
@@ -71,7 +74,7 @@ public class ClientDetailsBean implements ClientDetails {
 
     @Override
     public boolean isScoped() {
-        return scoped;
+        return this.scope !=null && !this.scope.isEmpty();
     }
 
     public void setScoped(boolean scoped) {
@@ -143,6 +146,18 @@ public class ClientDetailsBean implements ClientDetails {
 
     @Override
     public boolean isAutoApprove(String scope) {
-        return true;
+        if(this.autoApproveScopes == null) {
+            return false;
+        } else {
+            Iterator var2 = this.autoApproveScopes.iterator();
+            String auto;
+            do {
+                if(!var2.hasNext()) {
+                    return false;
+                }
+                auto = (String)var2.next();
+            } while(!auto.equals("true") && !scope.matches(auto));
+            return true;
+        }
     }
 }

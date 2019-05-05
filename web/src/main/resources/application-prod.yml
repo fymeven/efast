@@ -5,12 +5,9 @@ server:
   port: 8088
 ###################### eureka ######################
 eureka:
-    instance:
-      ip-address: 127.0.0.1
-      prefer-ip-address: true
     client:
       service-url:
-        defaultZone: http://127.0.0.1:8761/eureka,http://127.0.0.1:8762/eureka,http://127.0.0.1:8763/eureka
+        defaultZone: http://47.107.151.224:8761/eureka,http://47.107.151.224:8762/eureka,http://47.107.151.224:8763/eureka
 ###################### spring ######################
 spring:
   application:
@@ -43,12 +40,14 @@ spring:
           efast:
             clientId: client1
             clientSecret: e10adc3949ba59abbe56e057f20f883e
+            redirectUriTemplate: http://127.0.0.1:8088/efast-web/login/oauth/code/efast
+            scope: login
             authorizationGrantType: authorization_code
-            redirectUri: http://127.0.0.1:8088/efast-web/login/oauth/code/efast
+            clientAuthenticationMethod: basic
         provider:
           efast:
-            tokenUri: http://127.0.0.1:8801/security-cas-server/oauth/token
             authorizationUri: http://127.0.0.1:8801/security-cas-server/oauth/authorize
+            tokenUri: http://127.0.0.1:8801/security-cas-server/oauth/token
             userInfoUri: http://127.0.0.1:8801/security-cas-server/oauth/user
 ###################### swagger ######################
 swagger:

@@ -32,7 +32,7 @@
 
 
     <build>
-        <finalName>web</finalName>
+        <finalName>efast-web</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

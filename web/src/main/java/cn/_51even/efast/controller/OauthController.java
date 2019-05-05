@@ -60,7 +60,7 @@ public class OauthController {
 //        param.put("grant_type","authorization_code");
 //        param.put("code",code);
 //        param.put("redirect_uri","http://127.0.0.1:8088/efast-web");
-//        String accessToken = HttpUtils.doPost(accessTokenUrl, param, String.class);
+//        String accessToken = HttpUtils.doPost("http://127.0.0.1:8801/security-cas-server/oauth/token", param, String.class);
 //        System.out.println("accessToken="+accessToken);
 //        return accessToken;
 //    }

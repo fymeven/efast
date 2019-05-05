@@ -1,17 +1,17 @@
 package cn._51even.efast.security_cas_server.realm;
 
 import cn._51even.efast.security_cas_server.bean.entity.SysClientEntity;
-import cn._51even.efast.security_cas_server.bean.enums.GrantTypeEnum;
 import cn._51even.efast.security_cas_server.config.CasServerConfig;
 import cn._51even.efast.security_cas_server.service.api.SysClientService;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.provider.ClientDetails;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.ClientRegistrationException;
 
 import javax.annotation.Resource;
-import java.util.Arrays;
-import java.util.HashSet;
+import java.util.*;
 
 public class ClientDetailsServiceImpl implements ClientDetailsService {
 
@@ -26,26 +26,24 @@ public class ClientDetailsServiceImpl implements ClientDetailsService {
         SysClientEntity sysClientEntity = sysClientService.selectByClientId(clientId);
         clientDetailsBean.setClientId(clientId);
         clientDetailsBean.setClientSecret(sysClientEntity.getClientSecret());
-        String scopes = sysClientEntity.getScopes();
-        HashSet<String> redirectUri = new HashSet<>();
-        redirectUri.add(sysClientEntity.getClientRedirectUrl());
-        clientDetailsBean.setRegisteredRedirectUri(redirectUri);
         if (StringUtils.isNotBlank(sysClientEntity.getGrantType())){
-            HashSet<String> grantTypes = new HashSet<>();
-            grantTypes.add(sysClientEntity.getGrantType());
-            clientDetailsBean.setAuthorizedGrantTypes(grantTypes);
+            String[] split = sysClientEntity.getGrantType().split(",");
+            clientDetailsBean.setAuthorizedGrantTypes(new HashSet(Arrays.asList(split)));
         }
-        if (StringUtils.isNotBlank(scopes)){
-            String[] split = scopes.split(",");
+        if (StringUtils.isNotBlank(sysClientEntity.getScopes())){
+            String[] split = sysClientEntity.getScopes().split(",");
             clientDetailsBean.setScope(new HashSet(Arrays.asList(split)));
-            clientDetailsBean.setScoped(true);
+        }
+        if (StringUtils.isNotBlank(sysClientEntity.getClientRedirectUrl())){
+            String[] split = sysClientEntity.getClientRedirectUrl().split(",");
+            clientDetailsBean.setRegisteredRedirectUri(new HashSet(Arrays.asList(split)));
         }
         clientDetailsBean.setAccessTokenValiditySeconds(casServerConfig.getAccessTokenValiditySeconds());
         clientDetailsBean.setRefreshTokenValiditySeconds(casServerConfig.getRefreshTokenValiditySeconds());
-        GrantTypeEnum.grantType[] values = GrantTypeEnum.grantType.values();
-        for (GrantTypeEnum.grantType value : values) {
-            clientDetailsBean.getAuthorizedGrantTypes().add(value.getCode());
-        }
+        List<GrantedAuthority> authorities = new ArrayList<>();
+        authorities.add(new SimpleGrantedAuthority("READ"));
+        authorities.add(new SimpleGrantedAuthority("WRITE"));
+        clientDetailsBean.setAuthorities(authorities);
         return clientDetailsBean;
     }
 }

@@ -1,0 +1,12 @@
+server:
+  port: 8801
+spring:
+  application:
+    name: cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/fymeven/efast.git
+          username: fymeven
+          password: evenspike233

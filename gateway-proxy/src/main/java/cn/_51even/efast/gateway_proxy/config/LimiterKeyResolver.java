@@ -15,10 +15,10 @@ public class LimiterKeyResolver {
      * 使用请求header中的token参数限流
      * @return
      */
-    @Bean
-    public KeyResolver headerKeyResolver(){
-        return exchange -> Mono.just(exchange.getRequest().getHeaders().getFirst("token"));
-    }
+//    @Bean
+//    public KeyResolver headerKeyResolver(){
+//        return exchange -> Mono.just(exchange.getRequest().getHeaders().getFirst("token"));
+//    }
 
     /**
      * 使用ip地址进行限流

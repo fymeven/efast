@@ -1,6 +1,7 @@
 //package cn._51even.efast.security_cas_client.config;
 //
 //import cn._51even.efast.security_cas_client.bean.model.OauthClientRegister;
+//import org.springframework.boot.autoconfigure.security.oauth2.resource.UserInfoTokenServices;
 //import org.springframework.boot.web.servlet.FilterRegistrationBean;
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;
@@ -31,8 +32,7 @@
 //        OAuth2ClientAuthenticationProcessingFilter oAuth2ClientAuthenticationFilter = new OAuth2ClientAuthenticationProcessingFilter(path);
 //        OAuth2RestTemplate oAuth2RestTemplate = new OAuth2RestTemplate(register.getClient(), oauth2ClientContext);
 //        oAuth2ClientAuthenticationFilter.setRestTemplate(oAuth2RestTemplate);
-//        UserInfoTokenServices tokenServices = new UserInfoTokenServices(register.getResource().getUserInfoUri(),
-//        register.getClient().getClientId());
+//        UserInfoTokenServices tokenServices = new UserInfoTokenServices(register.getResource().getUserInfoUri(),register.getClient().getClientId());
 //        tokenServices.setRestTemplate(oAuth2RestTemplate);
 //        oAuth2ClientAuthenticationFilter.setTokenServices(tokenServices);
 //        return oAuth2ClientAuthenticationFilter;
