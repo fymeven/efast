@@ -302,11 +302,4 @@ public class ExcelUtils {
         }
         return cellValue;
     }
-
-    public static void main(String[] args) {
-
-    }
-
-
-
 }

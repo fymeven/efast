@@ -10,10 +10,8 @@ import org.springframework.stereotype.Service;
 @Service("sysClientService")
 public class SysClientServiceImpl extends BaseService<SysClientEntity,Integer> implements SysClientService {
     @Override
-    public SysClientEntity selectByClientId(String clientId) {
-        SysClientEntity sysClientEntity = new SysClientEntity();
-        sysClientEntity.setClientId(clientId);
-        return selectOne(sysClientEntity);
+    public SysClientEntity selectById(Integer id) {
+        return selectByPrimaryKey(id);
     }
 
     @Override

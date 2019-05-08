@@ -41,8 +41,8 @@
         <spring-cloud.version>Finchley.SR2</spring-cloud.version>
 <!--        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>-->
         <!--spring security-->
-        <spring-security-oauth2.version>2.3.5.RELEASE</spring-security-oauth2.version>
-        <security-oauth2-auto.version>2.1.2.RELEASE</security-oauth2-auto.version>
+<!--        <spring-security-oauth2.version>2.3.5.RELEASE</spring-security-oauth2.version>-->
+<!--        <security-oauth2-auto.version>2.1.2.RELEASE</security-oauth2-auto.version>-->
         <!--PostGreSQL驱动-->
         <postgresql.version>42.2.4</postgresql.version>
         <!--mysql驱动-->
@@ -109,16 +109,16 @@
                 <scope>import</scope>
             </dependency>
             <!--spring-security-oauth2-->
-            <dependency>
-                <groupId>org.springframework.security.oauth</groupId>
-                <artifactId>spring-security-oauth2</artifactId>
-                <version>${spring-security-oauth2.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.security.oauth.boot</groupId>
-                <artifactId>spring-security-oauth2-autoconfigure</artifactId>
-                <version>${security-oauth2-auto.version}</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.security.oauth</groupId>-->
+<!--                <artifactId>spring-security-oauth2</artifactId>-->
+<!--                <version>${spring-security-oauth2.version}</version>-->
+<!--            </dependency>-->
+<!--            <dependency>-->
+<!--                <groupId>org.springframework.security.oauth.boot</groupId>-->
+<!--                <artifactId>spring-security-oauth2-autoconfigure</artifactId>-->
+<!--                <version>${security-oauth2-auto.version}</version>-->
+<!--            </dependency>-->
             <!-- mysql -->
             <dependency>
                 <groupId>mysql</groupId>
@@ -346,7 +346,6 @@
 <!--    </repositories>-->
 
     <build>
-        <finalName>efast-parent</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

@@ -1,7 +1,7 @@
 package cn._51even.efast.security_sso_server.realm;
 
 import cn._51even.efast.security_sso_server.bean.enums.SysUserEnums;
-import cn._51even.efast.security_sso_server.bean.response.SysUser.CasUserInfo;
+import cn._51even.efast.security_sso_server.bean.response.SysUser.SSOUserInfo;
 import cn._51even.efast.security_sso_server.service.api.SysRoleService;
 import cn._51even.efast.security_sso_server.service.api.SysUserService;
 import org.springframework.security.core.GrantedAuthority;
@@ -32,7 +32,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         if (Objects.equals(userName,"securityAdmin")){
             return new User("securityAdmin",passwordEncoder.encode("securityAdmin"),AuthorityUtils.createAuthorityList("securityAdmin"));
         }
-        CasUserInfo casUserInfo = sysUserService.getUserByLoginAccount(userName);
+        SSOUserInfo casUserInfo = sysUserService.getUserByLoginAccount(userName);
         if (casUserInfo == null) {
             throw new UsernameNotFoundException("未发现此用户");
         }

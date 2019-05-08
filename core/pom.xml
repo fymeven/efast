@@ -2,14 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <artifactId>efast</artifactId>
         <groupId>cn._51even.efast</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
     <artifactId>core</artifactId>
+    <name>core</name>
+    <description>核心包</description>
 
     <dependencies>
         <!--lombok插件-->
@@ -56,10 +59,10 @@
             <artifactId>quartz-jobs</artifactId>
         </dependency>
         <!--kafka-->
-        <dependency>
-            <groupId>org.springframework.kafka</groupId>
-            <artifactId>spring-kafka</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.kafka</groupId>-->
+<!--            <artifactId>spring-kafka</artifactId>-->
+<!--        </dependency>-->
         <!-- webSocket消息-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -226,6 +229,8 @@
         <!--<dependency>-->
         <!--<groupId>com.oracle</groupId>-->
         <!--<artifactId>ojdbc6</artifactId>-->
+        <!--<scope>system</scope>-->
+        <!--<systemPath>${project.basedir}/lib/ojdbc6.jar</systemPath>-->
         <!--</dependency>-->
         <!-- druid连接池-->
         <dependency>
@@ -276,7 +281,5 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
     </dependencies>
-
-
 
 </project>

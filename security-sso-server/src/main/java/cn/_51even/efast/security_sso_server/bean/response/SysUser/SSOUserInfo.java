@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-public class CasUserInfo implements Serializable {
+public class SSOUserInfo implements Serializable {
 
     private Integer id;
 

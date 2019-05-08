@@ -6,7 +6,7 @@ import cn._51even.efast.security_sso_server.bean.request.sysClient.InsertSysClie
 
 public interface SysClientService {
 
-    SysClientEntity selectByClientId(String clientId);
+    SysClientEntity selectById(Integer id);
 
     ResponseResult registerClient(InsertSysClientReq insertSysClientReq);
 }

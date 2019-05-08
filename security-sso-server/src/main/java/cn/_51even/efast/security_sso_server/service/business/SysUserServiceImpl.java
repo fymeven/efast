@@ -5,7 +5,7 @@ import cn._51even.efast.core.base.service.BaseService;
 import cn._51even.efast.core.util.BeanCopyUtil;
 import cn._51even.efast.security_sso_server.bean.entity.SysUserEntity;
 import cn._51even.efast.security_sso_server.bean.request.sysUser.InsertSysUserReq;
-import cn._51even.efast.security_sso_server.bean.response.SysUser.CasUserInfo;
+import cn._51even.efast.security_sso_server.bean.response.SysUser.SSOUserInfo;
 import cn._51even.efast.security_sso_server.service.api.SysUserService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -22,16 +22,16 @@ public class SysUserServiceImpl extends BaseService<SysUserEntity,Integer> imple
     private PasswordEncoder passwordEncoder;
 
     @Override
-    public CasUserInfo getUserByLoginAccount(String loginAccount) {
-        CasUserInfo shiroUserInfo = new CasUserInfo();
+    public SSOUserInfo getUserByLoginAccount(String loginAccount) {
+        SSOUserInfo ssoUserInfo = new SSOUserInfo();
         Example example = new Example(SysUserEntity.class);
         Example.Criteria criteria = example.createCriteria();
         criteria.andEqualTo("loginAccount",loginAccount);
         List<SysUserEntity> sysUserEntities = select(example);
         if (sysUserEntities!=null && sysUserEntities.size() > 0){
             SysUserEntity sysUserEntity = sysUserEntities.get(0);
-            BeanCopyUtil.copyProperties(shiroUserInfo,sysUserEntity);
-            return shiroUserInfo;
+            BeanCopyUtil.copyProperties(ssoUserInfo,sysUserEntity);
+            return ssoUserInfo;
         }
         return null;
     }

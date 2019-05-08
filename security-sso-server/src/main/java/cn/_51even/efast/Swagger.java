@@ -29,7 +29,7 @@ public class Swagger {
     @SuppressWarnings("deprecation")
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("security-cas统一登录认证中心")
+                .title("security单点登录")
                 .description("Swagger接口文档")
                 .version("1.0")
                 .build();

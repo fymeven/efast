@@ -33,29 +33,29 @@ public class DataSourceConfig {
         return druidDataSource;
     }
 
-    @Bean(name = "dynamicDataSource")
-    @ConditionalOnProperty(prefix = "spring.datasource",name = "multipart",havingValue = "true")
-    public DataSource dynamicDataSource(){
-        AbstractRoutingDataSource dynamicDataSource = new AbstractRoutingDataSource() {
-            @Override
-            protected Object determineCurrentLookupKey() {
-                return DataSourceContextHolder.getDataSource();
-            }
-        };
-        dynamicDataSource.setDefaultTargetDataSource(dataSource());
-        dataSourceMap.put("defaultDB",dataSource());
-        dynamicDataSource.setTargetDataSources(dataSourceMap);
-        return dynamicDataSource;
-    }
+//    @Bean(name = "dynamicDataSource")
+//    @ConditionalOnProperty(prefix = "spring.datasource",name = "multipart",havingValue = "true")
+//    public DataSource dynamicDataSource(){
+//        AbstractRoutingDataSource dynamicDataSource = new AbstractRoutingDataSource() {
+//            @Override
+//            protected Object determineCurrentLookupKey() {
+//                return DataSourceContextHolder.getDataSource();
+//            }
+//        };
+//        dynamicDataSource.setDefaultTargetDataSource(dataSource());
+//        dataSourceMap.put("defaultDB",dataSource());
+//        dynamicDataSource.setTargetDataSources(dataSourceMap);
+//        return dynamicDataSource;
+//    }
 
     @Bean(name = "transactionManager")
     public PlatformTransactionManager dataSourceTransactionManager(@Qualifier("dataSource") DataSource dataSource){
         return new DataSourceTransactionManager(dataSource);
     }
 
-    @Bean(name = "transactionManager")
-    @ConditionalOnProperty(prefix = "spring.datasource",name = "multipart",havingValue = "true")
-    public PlatformTransactionManager dynamicDataSourceTransactionManager(@Qualifier("dynamicDataSource") DataSource dataSource){
-        return new DataSourceTransactionManager(dataSource);
-    }
+//    @Bean(name = "transactionManager")
+//    @ConditionalOnProperty(prefix = "spring.datasource",name = "multipart",havingValue = "true")
+//    public PlatformTransactionManager dynamicDataSourceTransactionManager(@Qualifier("dynamicDataSource") DataSource dataSource){
+//        return new DataSourceTransactionManager(dataSource);
+//    }
 }
