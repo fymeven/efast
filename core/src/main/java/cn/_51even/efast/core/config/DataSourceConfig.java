@@ -49,13 +49,13 @@ public class DataSourceConfig {
     }
 
     @Bean(name = "transactionManager")
-    public PlatformTransactionManager transactionManager(@Qualifier("dataSource") DataSource dataSource){
+    public PlatformTransactionManager dataSourceTransactionManager(@Qualifier("dataSource") DataSource dataSource){
         return new DataSourceTransactionManager(dataSource);
     }
 
-//    @Bean(name = "transactionManager")
-//    @ConditionalOnProperty(prefix = "spring.datasource",name = "multipart",havingValue = "true")
-//    public PlatformTransactionManager transactionManager(@Qualifier("dataSource") DataSource dataSource){
-//        return new DataSourceTransactionManager(dataSource);
-//    }
+    @Bean(name = "transactionManager")
+    @ConditionalOnProperty(prefix = "spring.datasource",name = "multipart",havingValue = "true")
+    public PlatformTransactionManager dynamicDataSourceTransactionManager(@Qualifier("dynamicDataSource") DataSource dataSource){
+        return new DataSourceTransactionManager(dataSource);
+    }
 }

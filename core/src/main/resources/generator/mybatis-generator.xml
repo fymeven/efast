@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <properties resource="generator/generatorConfig.properties"/>
+	<context id="DB2Tables" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+		<plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+			<property name="mappers" value="${mapper.mappers}"/>
+			<!--默认false,当数据库表名区分大小写时，值为 true-->
+			<property name="caseSensitive" value="true"/>
+		</plugin>
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+		<plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin"/>
+		<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
+		<plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="javaFileEncoding" value="UTF-8" />
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<!-- 配置数据库连接 -->
+		<jdbcConnection driverClass="${jdbc.driverClass}"
+			connectionURL="${jdbc.url}" userId="${jdbc.username}" password="${jdbc.password}">
+            <property name="useInformationSchema" value="true" />
+            <property name="remarks" value="true"/>
+		</jdbcConnection>
+
+        <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer true，把JDBC DECIMAL 和
+			NUMERIC 类型解析为java.math.BigDecimal -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- 指定javaBean生成的位置 -->
+		<javaModelGenerator targetPackage="${project.basePackage}.bean.entity" targetProject="${project.projectName}\src\main\java">
+			<!--模式是否单独生成一个包-->
+			<property name="enableSubPackages" value="false"/>
+            <!-- 从数据库返回的值被清理前后的空格 -->
+            <property name="trimStrings" value="false" />
+		</javaModelGenerator>
+
+		<!--指定sql映射文件生成的位置 -->
+		<sqlMapGenerator targetPackage="${project.basePackage}.dal.mapping" targetProject="${project.projectName}\src\main\java">
+			<!--模式是否单独生成一个包-->
+			<property name="enableSubPackages" value="false"/>
+		</sqlMapGenerator>
+
+		<!-- 指定dao接口生成的位置，mapper接口 -->
+		<javaClientGenerator type="XMLMAPPER" targetPackage="${project.basePackage}.dal.mapper" targetProject="${project.projectName}\src\main\java">
+			<!--模式是否单独生成一个包-->
+			<property name="enableSubPackages" value="false"/>
+		</javaClientGenerator>
+
+
+		 <!--table指定每个表的生成策略-->
+<!--		<table tableName="sys_client" domainObjectName="SysClientEntity">-->
+<!--			<generatedKey column="id" sqlStatement="JDBC"/>-->
+<!--		</table>-->
+		<!--<table tableName="sys_user_role" schema="efast" domainObjectName="SysUserRoleEntity" >-->
+		<!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+		<!--</table>-->
+		<!--<table tableName="sys_role_resource" schema="efast" domainObjectName="SysRoleResourceEntity" >-->
+		<!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+		<!--</table>-->
+		<!--<table tableName="sys_dept" schema="efast" domainObjectName="SysDeptEntity" >-->
+		<!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+		<!--</table>-->
+        <!--<table tableName="sys_user" schema="efast" domainObjectName="SysUserEntity" >-->
+			<!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+		<!--</table>-->
+		<!--<table tableName="sys_role" schema="efast" domainObjectName="SysRoleEntity" >-->
+			<!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+		<!--</table>-->
+		<!--<table tableName="sys_resource" schema="efast" domainObjectName="SysResourceEntity" >-->
+			<!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+		<!--</table>-->
+
+	</context>
+</generatorConfiguration>

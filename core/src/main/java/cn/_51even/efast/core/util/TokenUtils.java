@@ -1,6 +1,6 @@
 package cn._51even.efast.core.util;
 
-import cn._51even.efast.core.system.BusinessException;
+import cn._51even.efast.core.base.exception.BusinessException;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -18,8 +18,9 @@
         <module>cloud-gateway-proxy</module>
         <module>cloud-eureka-client</module>
         <module>core</module>
-        <module>security-cas-server</module>
-        <module>security-cas-client</module>
+        <module>security-sso-server</module>
+<!--        <module>security-oauth-server</module>-->
+<!--        <module>security-cas-client</module>-->
         <module>web</module>
         <module>message</module>
     </modules>

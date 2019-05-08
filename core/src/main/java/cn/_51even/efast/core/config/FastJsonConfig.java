@@ -12,6 +12,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
+//使用FastJson解析器
 @Configuration
 public class FastJsonConfig {
 

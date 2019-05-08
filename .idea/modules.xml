@@ -9,8 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/efast.iml" filepath="$PROJECT_DIR$/efast.iml" />
       <module fileurl="file://$PROJECT_DIR$/message/message.iml" filepath="$PROJECT_DIR$/message/message.iml" />
-      <module fileurl="file://$PROJECT_DIR$/security-cas-client/security-cas-client.iml" filepath="$PROJECT_DIR$/security-cas-client/security-cas-client.iml" />
-      <module fileurl="file://$PROJECT_DIR$/security-cas-server/security-cas-server.iml" filepath="$PROJECT_DIR$/security-cas-server/security-cas-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/security-sso-server/security-sso-server.iml" filepath="$PROJECT_DIR$/security-sso-server/security-sso-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/web/web.iml" filepath="$PROJECT_DIR$/web/web.iml" />
     </modules>
   </component>

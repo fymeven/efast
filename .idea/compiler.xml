@@ -7,14 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="web" />
-        <module name="security-cas-server" />
-        <module name="security-cas-client" />
         <module name="cloud-register-server" />
         <module name="cloud-eureka-client" />
         <module name="message" />
+        <module name="core" />
+        <module name="security-sso-server" />
         <module name="cloud-config-server" />
         <module name="cloud-gateway-proxy" />
-        <module name="core" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -30,7 +29,7 @@
       <module name="eureka-register-server-3" target="1.8" />
       <module name="message" target="1.8" />
       <module name="security-cas-client" target="1.8" />
-      <module name="security-cas-server" target="1.8" />
+      <module name="security-sso-server" target="1.8" />
       <module name="web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -46,7 +45,7 @@
       <module name="eureka-register-server-3" options="-parameters" />
       <module name="message" options="-parameters" />
       <module name="security-cas-client" options="-parameters" />
-      <module name="security-cas-server" options="-parameters" />
+      <module name="security-sso-server" options="-parameters" />
       <module name="web" options="-parameters" />
     </option>
   </component>

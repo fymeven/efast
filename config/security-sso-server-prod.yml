@@ -1,0 +1,33 @@
+###################### server ######################
+server:
+  port: 8801
+###################### eureka ######################
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8501/eureka,http://127.0.0.1:8502/eureka,http://127.0.0.1:8503/eureka
+###################### actuator ######################
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+###################### spring ######################
+spring:
+  application:
+    name: security-sso-server
+  ###################### datasource ######################
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://47.107.151.224:3306/efast-cas
+    username: even
+    password: even@mysql_224
+    driver-class-name: com.mysql.jdbc.Driver
+  ###################### redis ######################
+  redis:
+    host: 47.107.151.224
+    port: 6379
+    password: even@redis_224
+###################### swagger ######################
+swagger:
+  enabled: true

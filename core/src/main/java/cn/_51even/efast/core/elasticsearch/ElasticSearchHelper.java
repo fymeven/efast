@@ -1,6 +1,6 @@
 package cn._51even.efast.core.elasticsearch;
 
-import cn._51even.efast.core.system.BasePageRequest;
+import cn._51even.efast.core.base.bean.request.BasePageRequest;
 import com.github.pagehelper.PageInfo;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.search.sort.FieldSortBuilder;

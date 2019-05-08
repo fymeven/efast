@@ -7,14 +7,10 @@
     <file url="file://$PROJECT_DIR$/cloud-gateway-proxy" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-register-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/core" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/eureka-register-cluster" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/eureka-register-cluster/eureka-register-server-1" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/eureka-register-cluster/eureka-register-server-2" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/eureka-register-cluster/eureka-register-server-3" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/gateway-proxy" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/message" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/security-cas-client" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/security-cas-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/security-oauth-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/security-sso-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/web" charset="UTF-8" />
   </component>
 </project>
