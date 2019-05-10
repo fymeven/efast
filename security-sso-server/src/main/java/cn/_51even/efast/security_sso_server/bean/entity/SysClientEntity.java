@@ -7,6 +7,7 @@ import javax.persistence.*;
 @Table(name = "sys_client")
 public class SysClientEntity implements Serializable {
     @Id
+    @Column(insertable = false)
     @GeneratedValue(generator = "JDBC")
     private Integer id;
 

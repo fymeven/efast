@@ -19,9 +19,6 @@
         <module>cloud-eureka-client</module>
         <module>core</module>
         <module>security-sso-server</module>
-<!--        <module>security-oauth-server</module>-->
-<!--        <module>security-cas-client</module>-->
-        <module>web</module>
         <module>message</module>
     </modules>
     <packaging>pom</packaging>

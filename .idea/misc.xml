@@ -9,6 +9,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/eureka-register-cluster/pom.xml" />
+        <option value="$PROJECT_DIR$/web/pom.xml" />
       </set>
     </option>
   </component>

@@ -2,12 +2,10 @@ package cn._51even.efast.security_sso_server.realm;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 import java.util.HashSet;
 
-@Component
 public class UserDetailsBean implements UserDetails {
     /**
      * 用户名

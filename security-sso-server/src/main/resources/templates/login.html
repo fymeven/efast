@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div style="text-align: center">
+        <h2>登录</h2>
+        <form method="post" th:action="@{/sso/login}">
+            loginAccount:<input type="text" name="loginAccount">
+            loginPwd:<input type="text" name="loginPwd">
+            <span style="text-align: center">
+                <input type="submit" value="确认">
+            </span>
+        </form>
+    </div>
+</body>
+</html>
