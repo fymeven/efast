@@ -15,6 +15,6 @@ public class AccessDeniedHandler implements org.springframework.security.web.acc
     @Override
     public void handle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AccessDeniedException e) throws IOException, ServletException {
         httpServletResponse.setContentType("application/json;charset=UTF-8"); // 响应类型
-        httpServletResponse.getWriter().print(JSONObject.toJSON(ResponseResult.errorMsg(e.getMessage())));
+        httpServletResponse.getWriter().print(JSONObject.toJSON(ResponseResult.errorMsg("您没有访问权限!")));
     }
 }

@@ -1,1 +1,0 @@
-mvn spring-boot:run -Dspring.profiles.active=register3

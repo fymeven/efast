@@ -2,15 +2,9 @@ package cn._51even.efast.security_sso_server.config;
 
 import cn._51even.efast.security_sso_server.handler.*;
 import cn._51even.efast.security_sso_server.realm.UserDetailsServiceImpl;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -35,15 +29,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Resource
     private LogOutSuccessHandler logOutSuccessHandler;
 
-    @Resource
-    private AuthenticationEntryPoint authenticationEntryPoint;
-
     @Override
     protected void configure(HttpSecurity http)throws Exception{
-//        http.sessionManagement().maximumSessions(1)
+        http.sessionManagement().maximumSessions(1);
 //      .sessionRegistry(sessionRegistry)
 //        .expiredUrl("/sso/logout?expired");
-        // 禁用csrf
         http.csrf().disable();
         http
                 .authorizeRequests()
@@ -65,7 +55,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 //注销登录
                 .and().logout().logoutUrl("/sso/logout").logoutSuccessHandler(logOutSuccessHandler).permitAll()
                 //错误处理
-                .and().exceptionHandling().authenticationEntryPoint(authenticationEntryPoint).accessDeniedHandler(accessDeniedHandler)
+                .and().exceptionHandling().accessDeniedHandler(accessDeniedHandler)
         ;
     }
 

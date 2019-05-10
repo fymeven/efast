@@ -30,6 +30,10 @@ spring:
     host: 47.107.151.224
     port: 6379
     password: even@redis_224
+###################### log ######################
+logging:
+  level:
+    cn._51even.fast.security_sso_server.dal: debug
 ###################### swagger ######################
 swagger:
   enabled: true
