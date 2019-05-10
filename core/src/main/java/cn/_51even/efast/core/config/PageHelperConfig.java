@@ -17,7 +17,7 @@ import java.util.Properties;
 public class PageHelperConfig {
 
     @Bean(name = "sqlSessionFactory")
-    public SqlSessionFactoryBean sqlSessionFactory(@Qualifier("dataSource")DataSource dataSource) throws Exception {
+    public SqlSessionFactoryBean sqlSessionFactory(DataSource dataSource) throws Exception {
         SqlSessionFactoryBean factory = new SqlSessionFactoryBean();
         factory.setDataSource(dataSource);
         factory.setTypeAliasesPackage(ProjectConfig.MODEL_PACKAGE);
