@@ -2,7 +2,7 @@
 server:
   servlet:
     context-path: /security-sso-server
-  port: 8804
+  port: 8801
 ###################### eureka ######################
 eureka:
   client:
