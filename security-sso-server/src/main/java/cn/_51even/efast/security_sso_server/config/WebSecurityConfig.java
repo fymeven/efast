@@ -42,7 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 // 跨域预检请求
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
-                .antMatchers("/page/**","/sso/**").permitAll()
+                .antMatchers("/page/**","/json/**","/sso/**").permitAll()
                 // 静态文件
                 .antMatchers("/static/**","/templates/**","/favicon.ico").permitAll()
                 // swagger
@@ -53,7 +53,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 //其他请求都需要认证
                 .anyRequest().authenticated()
                 //认证处理
-                .and().formLogin().loginPage("/page/login").loginProcessingUrl("/sso/login").usernameParameter("loginAccount").passwordParameter("loginPwd")
+                .and().formLogin().loginPage("/json/login").loginProcessingUrl("/sso/login").usernameParameter("loginAccount").passwordParameter("loginPwd")
                 .successHandler(successHandler).failureHandler(failureHandler).permitAll()
                 //注销登录
                 .and().logout().logoutUrl("/sso/logout?exit").logoutSuccessHandler(logOutSuccessHandler).permitAll()
