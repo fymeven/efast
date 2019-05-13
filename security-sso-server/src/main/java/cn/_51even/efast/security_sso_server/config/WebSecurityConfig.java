@@ -29,11 +29,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Resource
     private LogOutSuccessHandler logOutSuccessHandler;
 
+    @Resource
+    private SsoServerConfig ssoServerConfig;
+
     @Override
     protected void configure(HttpSecurity http)throws Exception{
-        http.sessionManagement().maximumSessions(1);
+        http.sessionManagement().invalidSessionUrl("/sso/logout?expired")
 //      .sessionRegistry(sessionRegistry)
-//        .expiredUrl("/sso/logout?expired");
+        .maximumSessions(ssoServerConfig.getMaximumSessions()).expiredUrl("/sso/logout?otherLogin");
         http.csrf().disable();
         http
                 .authorizeRequests()
@@ -48,12 +51,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/v2/api-docs").permitAll()
                 .antMatchers("/webjars/springfox-swagger-ui/**").permitAll()
                 //其他请求都需要认证
-                .anyRequest().fullyAuthenticated()
+                .anyRequest().authenticated()
                 //认证处理
                 .and().formLogin().loginPage("/page/login").loginProcessingUrl("/sso/login").usernameParameter("loginAccount").passwordParameter("loginPwd")
                 .successHandler(successHandler).failureHandler(failureHandler).permitAll()
                 //注销登录
-                .and().logout().logoutUrl("/sso/logout").logoutSuccessHandler(logOutSuccessHandler).permitAll()
+                .and().logout().logoutUrl("/sso/logout?exit").logoutSuccessHandler(logOutSuccessHandler).permitAll()
                 //错误处理
                 .and().exceptionHandling().accessDeniedHandler(accessDeniedHandler)
         ;
