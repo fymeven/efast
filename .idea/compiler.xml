@@ -9,6 +9,7 @@
         <module name="cloud-register-server" />
         <module name="cloud-eureka-client" />
         <module name="message" />
+        <module name="fastdfs-file-server" />
         <module name="core" />
         <module name="security-sso-server" />
         <module name="cloud-config-server" />
@@ -26,6 +27,7 @@
       <module name="eureka-register-server-1" target="1.8" />
       <module name="eureka-register-server-2" target="1.8" />
       <module name="eureka-register-server-3" target="1.8" />
+      <module name="fastdfs-file-server" target="1.8" />
       <module name="message" target="1.8" />
       <module name="security-cas-client" target="1.8" />
       <module name="security-sso-server" target="1.8" />
@@ -43,6 +45,7 @@
       <module name="eureka-register-server-1" options="-parameters" />
       <module name="eureka-register-server-2" options="-parameters" />
       <module name="eureka-register-server-3" options="-parameters" />
+      <module name="fastdfs-file-server" options="-parameters" />
       <module name="message" options="-parameters" />
       <module name="security-cas-client" options="-parameters" />
       <module name="security-sso-server" options="-parameters" />

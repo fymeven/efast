@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/cloud-register-server/cloud-register-server.iml" filepath="$PROJECT_DIR$/cloud-register-server/cloud-register-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/efast.iml" filepath="$PROJECT_DIR$/efast.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fastdfs-file-server/fastdfs-file-server.iml" filepath="$PROJECT_DIR$/fastdfs-file-server/fastdfs-file-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/message/message.iml" filepath="$PROJECT_DIR$/message/message.iml" />
       <module fileurl="file://$PROJECT_DIR$/security-sso-server/security-sso-server.iml" filepath="$PROJECT_DIR$/security-sso-server/security-sso-server.iml" />
     </modules>
