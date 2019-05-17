@@ -1,9 +1,6 @@
 package cn._51even.efast.fastdfs_file_server.service;
 
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.nio.charset.Charset;
 
 import org.apache.commons.io.FilenameUtils;
@@ -52,6 +49,11 @@ public class FastDFSClient {
         FileInputStream inputStream = new FileInputStream (file);
         StorePath storePath = storageClient.uploadFile(inputStream,file.length(), FilenameUtils.getExtension(file.getName()),null);
         return getResAccessUrl(storePath);
+    }
+
+    public String uploadFile(InputStream is, long size, String fileName) {
+        StorePath path = storageClient.uploadFile(is, size, fileName, null);
+        return getResAccessUrl(path);
     }
 
     /**

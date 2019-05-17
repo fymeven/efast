@@ -22,8 +22,8 @@ swagger:
 fdfs:
   so-timeout: 1501
   connect-timeout: 601
-  thumb-image:             #缩略图生成参数
+  thumb-image:
     width: 150
     height: 150
-  tracker-list:            #TrackerList参数,支持多个
+  tracker-list:
     47.107.151.224:22122
