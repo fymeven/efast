@@ -3,8 +3,7 @@
 ### @email: fymeven@qq.conm  
 ## notice: 
 1.安装包在./src/main/resource/FastDFS目录下  
-2.FastDFS 采用时间戳同步同一个卷下的storage存储服务器，所以要保证同个group下  
-storage存储服务器的时钟保持同步，this's important!
+2.FastDFS 采用时间戳同步同一个卷下的storage存储服务器，所以要保证同个group下storage存储服务器的时钟保持同步，this's important!    
 3.before you install,make sure you have already installed gcc  
     #yum install gcc gcc-c++ make automake autoconf libtool pcre pcre-devel zlib zlib-devel openssl openssl-devel
 fdfs命令:
