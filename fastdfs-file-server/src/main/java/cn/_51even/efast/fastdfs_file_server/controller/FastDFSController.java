@@ -17,9 +17,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.MultipartFile;
 
 
-@Api(value = "fastDFS文件接口",tags = "fastDFS")
+@Api(value = "FastDFS文件接口",tags = "fdfs")
 @RestController
-@RequestMapping("/fastDFS")
+@RequestMapping("/fdfs")
 @Validated
 public class FastDFSController {
 

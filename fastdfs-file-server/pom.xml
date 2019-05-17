@@ -11,7 +11,7 @@
 
     <artifactId>fastdfs-file-server</artifactId>
     <name>fastdfs-file-server</name>
-    <description>fastdfs文件存储服务</description>
+    <description>FastDFS文件存储服务</description>
 
     <dependencies>
         <dependency>
