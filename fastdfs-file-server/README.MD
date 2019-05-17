@@ -162,11 +162,11 @@ fdfs命令:
         }
     
         location ~/group1/M00 {
-            proxy_pas   http://cluster_stroage_group1;
+            proxy_pass   http://cluster_stroage_group1;
         }
         
         location ~/group2/M00 {
-            proxy_pas   http://cluster_stroage_group2;
+            proxy_pass   http://cluster_stroage_group2;
         }
     
     }
