@@ -25,5 +25,7 @@ fdfs:
   thumb-image:
     width: 150
     height: 150
+  web-server-url:
+    47.107.151.224:8388
   tracker-list:
-    47.107.151.224:22122
+    - 47.107.151.224:22122
