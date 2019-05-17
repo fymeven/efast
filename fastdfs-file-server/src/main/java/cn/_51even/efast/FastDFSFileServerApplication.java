@@ -9,10 +9,10 @@ import org.springframework.jmx.support.RegistrationPolicy;
 @EnableMBeanExport(registration = RegistrationPolicy.IGNORE_EXISTING)
 @EnableDiscoveryClient
 @SpringBootApplication
-public class FastdfsFileServerApplication {
+public class FastDFSFileServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(FastdfsFileServerApplication.class,args);
+        SpringApplication.run(FastDFSFileServerApplication.class,args);
     }
 
 }

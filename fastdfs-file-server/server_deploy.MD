@@ -1,7 +1,11 @@
-# notice:
-1.FastDFS 采用时间戳同步同一个卷下的storage存储服务器，所以要保证同个group下  
+#FastDFS文件存储服务器集群搭建
+###@author: even   
+###@email: fymeven@qq.conm  
+## notice: 
+1.安装包在./src/main/resource/FastDFS目录下  
+2.FastDFS 采用时间戳同步同一个卷下的storage存储服务器，所以要保证同个group下  
 storage存储服务器的时钟保持同步，this's important!
-2.before you install,make sure you have already installed gcc  
+3.before you install,make sure you have already installed gcc  
     #yum install gcc gcc-c++ make automake autoconf libtool pcre pcre-devel zlib zlib-devel openssl openssl-devel
 fdfs命令:
 -   查看集群信息:
@@ -11,7 +15,7 @@ fdfs命令:
     2./usr/bin/fdfs_upload_file /etc/fdfs/client.conf /tmp/test.png  
 -   停止tracker与storage服务  
         # killall fdfs_trackerd 
-        # killall fdfs_storaged  
+        # killall fdfs_storaged 
  - ### 一.安装 libfastcommon工具包    
 1.解压: tar -zxvf libfastcommon-1.0.38.tar.gz  
 2.进入libfastcommon-1.0.38目录: cd libfastcommon-1.0.38  
@@ -71,6 +75,8 @@ fdfs命令:
     base_path=/opt/fastdfs/storage
     #tracker服务器地址
     tracker_server=192.168.0.137:22122
+    # when support multi-group, uncomment following section
+    [group2] #多个组时，放开此行注释
 ## 
 5.修改config文件:
 ##
@@ -93,10 +99,10 @@ fdfs命令:
         2.已安装nginx cp ./objs/nginx /usr/local/nginx/sbin/ 替换原文件
 - ### 二.配置启动nginx
 1.编辑nginx配置文件: vim /usr/local/nginx/conf/nginx.conf
-#####编辑内容
-#单机配置 tracker与storage服务器 web访问端口设为一致  
-    #http.server_port=8888  
+#####单机配置  
 ##
+    #tracker与storage服务器 web访问端口设为一致  
+    #http.server_port=8888
     server {
         listen          8388;
         server_name     localhost;
@@ -117,7 +123,7 @@ fdfs命令:
         }
     }
 ##
-#集群配置
+#####集群配置
 ##
     upstream store_group1{
         server 192.168.0.137:8888 weight=10 max_fails=2 fail_timeout=30s;

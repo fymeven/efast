@@ -11,7 +11,7 @@
 
     <artifactId>cloud-gateway-proxy</artifactId>
     <name>cloud-gateway-proxy</name>
-    <description>gateway网关路由代理</description>
+    <description>gateway网关路由代理服务</description>
 
     <dependencies>
         <dependency>

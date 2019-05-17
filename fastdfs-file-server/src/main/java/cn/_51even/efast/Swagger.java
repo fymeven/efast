@@ -29,7 +29,7 @@ public class Swagger {
     @SuppressWarnings("deprecation")
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("fastdfs文件存储服务")
+                .title("FastDFS文件存储服务")
                 .description("Swagger接口文档")
                 .version("1.0")
                 .build();

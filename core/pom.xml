@@ -12,7 +12,7 @@
 
     <artifactId>core</artifactId>
     <name>core</name>
-    <description>核心包</description>
+    <description>核心框架包</description>
 
     <dependencies>
         <!--lombok插件-->
