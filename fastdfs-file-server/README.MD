@@ -28,7 +28,7 @@ fdfs命令:
 4.安装: ./make.sh install  
 5.拷贝配置文件: cp conf/* /etc/fdfs/  
 6.修改tracker.conf配置文件: vim /etc/fdfs/tracker.conf  
-#####修改内容
+##### 修改内容
 ##
     #不限定ip
     bind_addr=0.0.0.0   
@@ -40,7 +40,7 @@ fdfs命令:
     http.server_port=8388
 ##    
 7.修改storage.conf配置文件: vim /etc/fdfs/storage.conf
-#####修改内容
+##### 修改内容
 ##  
     #不限定ip
     bind_addr=0.0.0.0
@@ -66,7 +66,7 @@ fdfs命令:
 2.进入fastdfs-nginx-module目录:  cd fastdfs-nginx-module  
 3.拷贝配置文件 cp src/mod_fastdfs.conf /etc/fdfs/  
 4.修改mod_fastdfs.conf配置文件: vim /etc/fdfs/修改mod_fastdfs.conf
-#####修改内容
+##### 修改内容
 ##  
     #文件路径包含组名
     url_have_group_name=true
@@ -98,7 +98,7 @@ fdfs命令:
         2.已安装nginx cp ./objs/nginx /usr/local/nginx/sbin/ 替换原文件
 - ### 二.配置启动nginx
 1.编辑nginx配置文件: vim /usr/local/nginx/conf/nginx.conf  
-#####单机配置  
+##### 单机配置  
 ##
     #tracker与storage服务器 web访问端口设为一致  
     #http.server_port=8388
@@ -122,7 +122,7 @@ fdfs命令:
         }
     }
 ##
-#####集群配置
+##### 集群配置
 ##
     # notice: the same group must have the same port   
     upstream cluster_stroage_group1{
