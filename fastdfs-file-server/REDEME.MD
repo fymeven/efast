@@ -1,6 +1,6 @@
-#FastDFS文件存储服务器集群搭建
-###@author: even   
-###@email: fymeven@qq.conm  
+# FastDFS文件存储服务器集群搭建
+### @author: even   
+### @email: fymeven@qq.conm  
 ## notice: 
 1.安装包在./src/main/resource/FastDFS目录下  
 2.FastDFS 采用时间戳同步同一个卷下的storage存储服务器，所以要保证同个group下  
@@ -98,11 +98,11 @@ fdfs命令:
         1.未安装nginx执行make install安装
         2.已安装nginx cp ./objs/nginx /usr/local/nginx/sbin/ 替换原文件
 - ### 二.配置启动nginx
-1.编辑nginx配置文件: vim /usr/local/nginx/conf/nginx.conf
+1.编辑nginx配置文件: vim /usr/local/nginx/conf/nginx.conf  
 #####单机配置  
 ##
     #tracker与storage服务器 web访问端口设为一致  
-    #http.server_port=8888
+    #http.server_port=8388
     server {
         listen          8388;
         server_name     localhost;
@@ -125,13 +125,14 @@ fdfs命令:
 ##
 #####集群配置
 ##
-    upstream store_group1{
+    # notice: the same group must have the same port   
+    upstream cluster_stroage_group1{
         server 192.168.0.137:8888 weight=10 max_fails=2 fail_timeout=30s;
         server 192.168.0.138:8888 weight=10 max_fails=2 fail_timeout=30s;
         server 192.168.0.139:8888 weight=10 max_fails=2 fail_timeout=30s;
     }
     
-    upstream store_group2{
+    upstream cluster_stroage_group2{
         server 192.168.0.137:8889 weight=10 max_fails=2 fail_timeout=30s;
         server 192.168.0.138:8889 weight=10 max_fails=2 fail_timeout=30s;
         server 192.168.0.139:8889 weight=10 max_fails=2 fail_timeout=30s;
@@ -162,11 +163,11 @@ fdfs命令:
         }
     
         location ~/group1/M00 {
-            proxy_pas   http://store_group1;
+            proxy_pas   http://cluster_stroage_group1;
         }
         
         location ~/group2/M00 {
-            proxy_pas   http://store_group2;
+            proxy_pas   http://cluster_stroage_group2;
         }
     
     }
