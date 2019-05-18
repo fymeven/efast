@@ -81,8 +81,11 @@ public class FastDFSClient {
      * @return
      */
     public byte[]  download(String fileUrl) {
-        String group = fileUrl.substring(0, fileUrl.indexOf("/"));
-        String path = fileUrl.substring(fileUrl.indexOf("/") + 1);
+        int pos = fileUrl.indexOf("group");
+        String groupAndPath = fileUrl.substring(pos);
+        pos = groupAndPath.indexOf("/");
+        String group = groupAndPath.substring(0, pos);
+        String path = groupAndPath.substring(pos + 1);
         byte[] bytes = storageClient.downloadFile(group, path, new DownloadByteArray());
         return bytes;
     }
@@ -103,5 +106,4 @@ public class FastDFSClient {
             logger.warn(e.getMessage());
         }
     }
-
 }
