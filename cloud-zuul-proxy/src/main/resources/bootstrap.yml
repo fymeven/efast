@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: cloud-zuul-proxy
+  cloud:
+    config:
+      uri: http://localhost:8301

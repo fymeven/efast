@@ -41,8 +41,10 @@ public class FastDFSController {
     public void  download(String fileUrl, HttpServletResponse response) throws Exception{
         byte[] data = fdfsClient.download(fileUrl);
         response.setCharacterEncoding("UTF-8");
-        String fileName = fileUrl.substring(fileUrl.lastIndexOf("."));
-        response.setHeader("Content-disposition", "attachment;filename=" + URLEncoder.encode(fileName, "UTF-8"));
+        int suffixIndex = fileUrl.lastIndexOf(".");
+        String fileName = fileUrl.substring(fileUrl.lastIndexOf("/")+1,suffixIndex);
+        String suffix = fileUrl.substring(suffixIndex);
+        response.setHeader("Content-disposition", "attachment;filename=" + URLEncoder.encode(fileName+suffix, "UTF-8"));
         ServletOutputStream outputStream = response.getOutputStream();
         IOUtils.write(data, outputStream);
     }

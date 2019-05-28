@@ -17,6 +17,8 @@ import com.github.tobato.fastdfs.domain.proto.storage.DownloadByteArray;
 import com.github.tobato.fastdfs.exception.FdfsUnsupportStorePathException;
 import com.github.tobato.fastdfs.service.FastFileStorageClient;
 
+import javax.servlet.http.HttpServletResponse;
+
 @Component
 public class FastDFSClient {
 
@@ -100,8 +102,12 @@ public class FastDFSClient {
             return;
         }
         try {
-            StorePath storePath = StorePath.parseFromUrl(fileUrl);
-            storageClient.deleteFile(storePath.getGroup(), storePath.getPath());
+            int pos = fileUrl.indexOf("group");
+            String groupAndPath = fileUrl.substring(pos);
+            pos = groupAndPath.indexOf("/");
+            String group = groupAndPath.substring(0, pos);
+            String path = groupAndPath.substring(pos + 1);
+            storageClient.deleteFile(group, path);
         } catch (FdfsUnsupportStorePathException e) {
             logger.warn(e.getMessage());
         }

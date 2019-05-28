@@ -16,6 +16,10 @@ management:
 spring:
   application:
     name: security-sso-server
+  ###################### cloud #####################
+  cloud:
+    inetutils:
+      ignored-interfaces[0]: eth0
   ###################### datasource ######################
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource

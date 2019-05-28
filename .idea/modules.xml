@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/cloud-eureka-client/cloud-eureka-client.iml" filepath="$PROJECT_DIR$/cloud-eureka-client/cloud-eureka-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-gateway-proxy/cloud-gateway-proxy.iml" filepath="$PROJECT_DIR$/cloud-gateway-proxy/cloud-gateway-proxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-register-server/cloud-register-server.iml" filepath="$PROJECT_DIR$/cloud-register-server/cloud-register-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-zuul-proxy/cloud-zuul-proxy.iml" filepath="$PROJECT_DIR$/cloud-zuul-proxy/cloud-zuul-proxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/efast.iml" filepath="$PROJECT_DIR$/efast.iml" />
       <module fileurl="file://$PROJECT_DIR$/fastdfs-file-server/fastdfs-file-server.iml" filepath="$PROJECT_DIR$/fastdfs-file-server/fastdfs-file-server.iml" />

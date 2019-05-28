@@ -1,0 +1,23 @@
+###################### server ######################
+server:
+  port: 8389
+spring:
+  application:
+    name: cloud-zuul-proxy
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8501/eureka,http://127.0.0.1:8502/eureka,http://127.0.0.1:8503/eureka
+feign:
+  hystrix:
+    enabled: true
+zuul:
+  routes:
+    yth-web:
+      path: /yth-web/**
+      serviceId: yth-web
+      stripPrefix: false
+    fdfs-server:
+      path: /fdfs-server/**
+      serviceId: fastdfs-file-server
+      stripPrefix: false

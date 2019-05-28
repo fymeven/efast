@@ -14,9 +14,10 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>cloud-config-server</module>
-        <module>cloud-register-server</module>
         <module>cloud-gateway-proxy</module>
+        <module>cloud-zuul-proxy</module>
         <module>cloud-eureka-client</module>
+        <module>cloud-register-server</module>
         <module>fastdfs-file-server</module>
         <module>core</module>
         <module>security-sso-server</module>
@@ -58,6 +59,7 @@
         <pagehelper.version>1.2.3</pagehelper.version>
         <!-- elasticsearch 组件-->
         <elasticsearch.transport.version>5.6.10</elasticsearch.transport.version>
+<!--        <elasticsearch.transport.version>6.7.2</elasticsearch.transport.version>-->
         <!--quartz任务调度-->
         <quartz.version>2.3.0</quartz.version>
         <!--kafka-->
@@ -175,6 +177,11 @@
                 <groupId>org.quartz-scheduler</groupId>
                 <artifactId>quartz-jobs</artifactId>
                 <version>${quartz.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch</groupId>
+                <artifactId>elasticsearch</artifactId>
+                <version>${elasticsearch.transport.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.elasticsearch.client</groupId>
